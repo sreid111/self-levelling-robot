@@ -8,6 +8,7 @@ basic.forever(function () {
             . . # . .
             `)
         servos.P0.run(10)
+        servos.P1.run(-10)
     } else if (input.acceleration(Dimension.X) > 50) {
         basic.showLeds(`
             . . # . .
@@ -17,9 +18,10 @@ basic.forever(function () {
             . . # . .
             `)
         servos.P1.run(10)
+        servos.P0.run(-10)
     } else {
-        servos.P0.stop()
-        servos.P1.stop()
+        servos.P0.run(0)
+        servos.P1.run(0)
         basic.showLeds(`
             . . . . .
             . . . . .
